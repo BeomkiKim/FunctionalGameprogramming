@@ -16,10 +16,14 @@ public class GameManager : MonoBehaviour
     public float groundScore;
 
     public Text scoreText;
+    public Text timeText;
+    float sec, min;
+
 
     private void Start()
     {
         player = FindObjectOfType<PlayerControl>();
+        timeText.text = "00:00";
     }
     void sumScore()
     {
@@ -30,6 +34,15 @@ public class GameManager : MonoBehaviour
     {
         gameTime += Time.deltaTime;
         timeScore += Time.deltaTime;
+        sec += Time.deltaTime;
+
+        float secFloor = Mathf.Floor(sec);
+        if(secFloor == 60)
+        {
+            sec = 0;
+            min++;
+        }
+        timeText.text = min.ToString("00") + ":" + secFloor.ToString("00");
         if(player.isGround)
         {
             groundScore += Time.deltaTime;

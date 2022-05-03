@@ -13,6 +13,15 @@ public class PlayerControl : MonoBehaviour
     {
         Time.timeScale = 1;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Dead")
+        {
+            Time.timeScale = 0;
+            FailUi.SetActive(true);
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Ground")
