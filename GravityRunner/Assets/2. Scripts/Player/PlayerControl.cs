@@ -18,11 +18,10 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //플레이어죽음
         if(other.tag == "Dead")
         {
-            Time.timeScale = 0;
-            game.failGame();
-            FailUi.SetActive(true);
+            Dead();
         }
     }
     private void OnTriggerStay(Collider other)
@@ -32,17 +31,23 @@ public class PlayerControl : MonoBehaviour
             isGround = true;
         }
     }
+    public void Dead()
+    {
+        game.failGame();
+
+        Time.timeScale = 0;
+        FailUi.SetActive(true);
+    }
     void Update()
     {
         isGround = false;
         currentSpeed = levelControl.getPlayerSpeed();
         transform.Translate(new Vector3(currentSpeed * Time.deltaTime, 0.0f, 0.0f));
         
+        //플레이어죽음
         if(transform.position.y>10 || transform.position.y<-6)
         {
-            game.failGame();
-            Time.timeScale = 0;
-            FailUi.SetActive(true);
+            Dead();
         }
     }
 }

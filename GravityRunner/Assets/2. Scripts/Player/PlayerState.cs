@@ -16,10 +16,12 @@ public class PlayerState : MonoBehaviour
     public GameObject failUi;
 
     GameManager game;
+    PlayerControl player;
 
     private void Start()
     {
         game = FindObjectOfType<GameManager>();
+        player = GetComponent<PlayerControl>();
         lifeCur = life;
         heartCount = life - 1;
     }
@@ -76,11 +78,10 @@ public class PlayerState : MonoBehaviour
             sheildImage.SetActive(false);
         }
 
+        //플레이어죽음
         if(lifeCur <= 0)
         {
-            game.failGame();
-            failUi.SetActive(true);
-            Time.timeScale = 0;
+            player.Dead();
 
         }
     }
