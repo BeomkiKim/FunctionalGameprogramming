@@ -25,4 +25,8 @@ public class SceneCtrl : MonoBehaviour
     {
         SceneManager.LoadScene("TitleScene");
     }
+    public void clickEnding()
+    {
+        SceneManager.LoadScene("Ending");
+    }
 }

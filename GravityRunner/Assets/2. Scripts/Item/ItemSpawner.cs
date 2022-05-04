@@ -60,9 +60,10 @@ public class ItemSpawner : MonoBehaviour
     {
         time += Time.deltaTime;
         realTime += Time.deltaTime;
-        if (realTime > 10.0f) { minDelay = 7.0f; maxDelay = 14.0f; }
-        if (realTime > 20.0f) { minDelay = 6.0f; maxDelay = 12.0f; }
-        if (realTime > 30.0f) { minDelay = 5.0f; maxDelay = 10.0f; }
+        if (realTime > 10.0f) { minDelay = 6.0f; maxDelay = 12.0f; }
+        if (realTime > 20.0f) { minDelay = 5.0f; maxDelay = 10.0f; }
+        if (realTime > 30.0f) { minDelay = 4.0f; maxDelay = 8.0f; }
+        if (realTime > 60.0f) { realTime = 0.0f; }
 
         float delay = Random.Range(minDelay, maxDelay);
 

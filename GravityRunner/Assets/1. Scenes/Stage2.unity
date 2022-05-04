@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockCount: 0
-  level: 1
+  level: 0
 --- !u!114 &142084258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockCount: 0
-  level: 1
+  level: 0
 --- !u!114 &142084259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a279108d77b70ff4894100bc349f75b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clearTime: 50
+  clearTime: 60
   gameTime: 0
   clearUi: {fileID: 1002002611}
   totalScore: 0
@@ -540,7 +540,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: NextStage
+  m_Text: Ending
 --- !u!222 &247704898
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -594,6 +594,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trap: {fileID: 6986500929916729816, guid: f1d96056fcd62884cb595058bbdfb64c, type: 3}
+  realTime: 0
+  level: 0
 --- !u!114 &277786074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,6 +609,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trap: {fileID: 3507848216801195205, guid: d6da5741747da5040b41b52c8ba36e93, type: 3}
+  realTime: 0
+  level: 0
 --- !u!1 &310468745
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,6 +784,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trap: {fileID: 6986500929916729816, guid: f1d96056fcd62884cb595058bbdfb64c, type: 3}
+  realTime: 0
+  level: 0
 --- !u!114 &500954249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,6 +799,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trap: {fileID: 3507848216801195205, guid: d6da5741747da5040b41b52c8ba36e93, type: 3}
+  realTime: 0
+  level: 0
 --- !u!1 &588362697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,6 +1261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trap: {fileID: 6986500929916729816, guid: f1d96056fcd62884cb595058bbdfb64c, type: 3}
+  realTime: 0
+  level: 0
 --- !u!114 &773184084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1266,6 +1276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trap: {fileID: 3507848216801195205, guid: d6da5741747da5040b41b52c8ba36e93, type: 3}
+  realTime: 0
+  level: 0
 --- !u!1 &817011405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,7 +1366,7 @@ GameObject:
   - component: {fileID: 878037567}
   - component: {fileID: 878037566}
   m_Layer: 5
-  m_Name: NextStage
+  m_Name: Ending
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1426,7 +1438,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2145809094}
         m_TargetAssemblyTypeName: SceneCtrl, Assembly-CSharp
-        m_MethodName: clickStage3
+        m_MethodName: clickEnding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2145809093}
+        m_TargetAssemblyTypeName: PassLevelDemo, Assembly-CSharp
+        m_MethodName: Pass
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3540,6 +3564,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trap: {fileID: 6986500929916729816, guid: f1d96056fcd62884cb595058bbdfb64c, type: 3}
+  realTime: 0
+  level: 0
 --- !u!114 &1853135065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3553,6 +3579,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trap: {fileID: 3507848216801195205, guid: d6da5741747da5040b41b52c8ba36e93, type: 3}
+  realTime: 0
+  level: 0
 --- !u!1 &1868097827
 GameObject:
   m_ObjectHideFlags: 0

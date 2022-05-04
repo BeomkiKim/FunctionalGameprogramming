@@ -12,8 +12,8 @@ public class TrapSpawner_1 : MonoBehaviour
     float maxDelay;
     float time;
     int waitingTime;
-    float realTime;
-    int level;
+    public float realTime;
+    public int level;
     bool isFirst = false;
     bool isCoroutine = false;
 
@@ -32,11 +32,14 @@ public class TrapSpawner_1 : MonoBehaviour
     {
         time += Time.deltaTime;
         realTime += Time.deltaTime;
-        if (realTime > 10.0f) { minDelay = 4.5f; maxDelay = 8.0f; }
-        if (realTime > 20.0f) { minDelay = 4.0f; maxDelay = 7.0f; }
-        if (realTime > 30.0f) { level = 2; minDelay = 3.5f; maxDelay = 6.0f; }
-        if (realTime > 40.0f) { minDelay = 3.0f; maxDelay = 5.0f; }
-        if (realTime > 50.0f) { level = 3; minDelay = 2.5f; maxDelay = 4.0f; }
+
+        if (realTime > 10.0f) { minDelay = 5.5f; maxDelay = 9.0f; }
+        if (realTime > 20.0f) { minDelay = 5.0f; maxDelay = 8.0f; }
+        if (realTime > 30.0f) { level = 2; minDelay = 4.5f; maxDelay = 7.0f; }
+        if (realTime > 40.0f) { minDelay = 4.0f; maxDelay = 6.0f; }
+        if (realTime > 50.0f) { level = 3; minDelay = 3.5f; maxDelay = 5.0f; }
+        if (realTime > 60.0f) { level = 1; realTime = 0.0f; }
+
 
         float delay = Random.Range(minDelay, maxDelay);
 

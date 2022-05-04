@@ -27,7 +27,7 @@ public class PlayerControl : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Ground")
+        if (other.tag == "Ground")
         {
             isGround = true;
         }

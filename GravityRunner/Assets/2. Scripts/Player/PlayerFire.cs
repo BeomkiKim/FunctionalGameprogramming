@@ -5,60 +5,69 @@ using UnityEngine.EventSystems;
 
 public class PlayerFire : MonoBehaviour
 {
-    public float bulletPower;
-    public GameObject[] bulletPool;
+    public GameObject bullet;
+    public int bulletCount;
     public GameObject[] bulletImage;
-    int poolSize = 5;
-
-    private void Start()
+    private void Awake()
     {
-        bulletPool = new GameObject[poolSize];
-
-        for (int i = 0; i < poolSize; i++)
-        {
-            GameObject bullet = Instantiate(Resources.Load("Bullet")) as GameObject;
-            bulletPool[i] = bullet;
-            
-
-            bullet.SetActive(false);
-            bulletImage[i].SetActive(true);
-        }
+        bulletCount = 0;
+        bullet = Resources.Load("Bullet") as GameObject;
     }
 
     private void Update()
     {
-        if(Input.GetButtonDown("Fire1") && !EventSystem.current.IsPointerOverGameObject() && Time.timeScale != 0)
+
+        if(Input.GetButtonDown("Fire1") && !EventSystem.current.IsPointerOverGameObject() && Time.timeScale != 0 && bulletCount<=4)
         {
-            for(int i = 0; i< poolSize; i++)
-            {
-                GameObject bullet = bulletPool[i];
-                GameObject image = bulletImage[i];
+            GameObject shoot = GameObject.Instantiate(bullet, gameObject.transform.position, bullet.transform.rotation) as GameObject;
+            bulletCount += 1;
 
-                if(!bullet.activeSelf)
-                {
-                    bullet.SetActive(true);
-                    image.SetActive(false);
-                    bullet.transform.position = transform.position + new Vector3(1.0f, 0, 0);
-
-                    bullet.GetComponent<Rigidbody>().AddForce(Vector2.right * bulletPower, ForceMode.Impulse);
-
-                    StartCoroutine(ResetBullet(bullet));
-                    StartCoroutine(ResetImage(image));
-                    break;
-                }
-            }
         }
-    }
+        switch(bulletCount)
+        {
+            case 0:
+                bulletImage[4].SetActive(true);
+                bulletImage[3].SetActive(true);
+                bulletImage[2].SetActive(true);
+                bulletImage[1].SetActive(true);
+                bulletImage[0].SetActive(true);
+                break;
+            case 1:
+                bulletImage[0].SetActive(true);
+                bulletImage[1].SetActive(true);
+                bulletImage[2].SetActive(true);
+                bulletImage[3].SetActive(true);
+                bulletImage[4].SetActive(false);
+                break;
+            case 2:
+                bulletImage[0].SetActive(true);
+                bulletImage[1].SetActive(true);
+                bulletImage[2].SetActive(true);
+                bulletImage[3].SetActive(false);
+                bulletImage[4].SetActive(false);
+                break;
+            case 3:
+                bulletImage[0].SetActive(true);
+                bulletImage[1].SetActive(true);
+                bulletImage[2].SetActive(false);
+                bulletImage[3].SetActive(false);
+                bulletImage[4].SetActive(false);
+                break;
+            case 4:
+                bulletImage[0].SetActive(true);
+                bulletImage[1].SetActive(false);
+                bulletImage[2].SetActive(false);
+                bulletImage[3].SetActive(false);
+                bulletImage[4].SetActive(false);
+                break;
+            case 5:
+                bulletImage[0].SetActive(false);
+                bulletImage[1].SetActive(false);
+                bulletImage[2].SetActive(false);
+                bulletImage[3].SetActive(false);
+                bulletImage[4].SetActive(false);
+                break;
 
-    IEnumerator ResetBullet(GameObject bullet)
-    {
-        yield return new WaitForSeconds(2);
-
-        bullet.SetActive(false);
-    }
-    IEnumerator ResetImage(GameObject image)
-    {
-        yield return new WaitForSeconds(2);
-        image.SetActive(true);
+        }
     }
 }
