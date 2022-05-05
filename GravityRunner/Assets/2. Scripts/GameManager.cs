@@ -21,15 +21,23 @@ public class GameManager : MonoBehaviour
     public Text updateScoreText;
     public Text failScoreText;
     public Text timeText;
+    public Text finishTimeText;
+    public Text clearTimeText;
     public Text highScoreText;
     float sec, min;
+    float secFloor;
 
 
     private void Start()
     {
         player = FindObjectOfType<PlayerControl>();
-        highScoreText.text = "High : "+ ((int)PlayerPrefs.GetFloat("Highscore")).ToString();
+        highScoreText.text = "High : " + ((int)PlayerPrefs.GetFloat("Highscore")).ToString();
+        if (clearUi == null) return;
+        if (clearTimeText == null) return;
+
         timeText.text = "00:00";
+        finishTimeText.text = "00:00";
+        clearTimeText.text = "00:00";
     }
     public void sumScore()
     {
@@ -46,6 +54,7 @@ public class GameManager : MonoBehaviour
     {
         sumScore();
         failScoreText.text = string.Format("{0:0}", totalScore);
+        finishTimeText.text =min.ToString("00") + ":" + secFloor.ToString("00");
         saveScore();
 
     }
@@ -59,13 +68,14 @@ public class GameManager : MonoBehaviour
         updateScoreText.text = string.Format("{0:0}", totalScore);
         
 
-        float secFloor = Mathf.Floor(sec);
+        secFloor = Mathf.Floor(sec);
         if(secFloor == 60)
         {
             sec = 0;
             min++;
         }
         timeText.text = min.ToString("00") + ":" + secFloor.ToString("00");
+        
         if(player.isGround)
         {
             groundScore += Time.deltaTime;
@@ -73,7 +83,9 @@ public class GameManager : MonoBehaviour
         if(gameTime >= clearTime)
         {
             sumScore();
+            saveScore();
             scoreText.text = string.Format("{0:0}", totalScore);
+            clearTimeText.text = min.ToString("00") + ":" + secFloor.ToString("00");
             clearUi.SetActive(true);
             Time.timeScale = 0;
         }

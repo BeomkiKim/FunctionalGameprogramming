@@ -8,6 +8,10 @@ public class PlayerState : MonoBehaviour
     public int lifeCur;
     public float sheildTime = 0.0f;
 
+    private Renderer Renderer;
+    public Material sheildMaterial;
+    
+
 
     public GameObject[] heart;
     public GameObject sheildImage;
@@ -22,6 +26,7 @@ public class PlayerState : MonoBehaviour
     {
         game = FindObjectOfType<GameManager>();
         player = GetComponent<PlayerControl>();
+        Renderer = GetComponent<Renderer>();
         lifeCur = life;
         heartCount = life - 1;
     }
@@ -51,6 +56,7 @@ public class PlayerState : MonoBehaviour
                 break;
             case ItemCtrl.ItemKind.Sheild:
                 sheildImage.SetActive(true);
+                Renderer.material = sheildMaterial;
                 game.itemScore += 1;
                 sheildTime += 5.0f;
                 break;
@@ -64,6 +70,8 @@ public class PlayerState : MonoBehaviour
         {
             sheildTime -= Time.deltaTime;
         }
+        else
+            Renderer.material.color = Color.yellow;
         if(lifeCur >= 3)
         {
             lifeCur = 3;

@@ -23,6 +23,10 @@ public class PlayerFire : MonoBehaviour
             bulletCount += 1;
 
         }
+        if(bulletCount<0)
+        {
+            bulletCount = 0;
+        }
         switch(bulletCount)
         {
             case 0:

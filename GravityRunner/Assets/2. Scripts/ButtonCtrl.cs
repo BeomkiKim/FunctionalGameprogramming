@@ -25,6 +25,15 @@ public class ButtonCtrl : MonoBehaviour
         option.SetActive(false);
         isOption = false;
     }
+    public void clickQuit()
+    {
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 
     private void Update()
     {
