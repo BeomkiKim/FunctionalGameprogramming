@@ -8,6 +8,11 @@ public class ButtonCtrl : MonoBehaviour
     public GameObject option;
     bool isOption = false;
     bool isHowToPlay = false;
+
+    private void Awake()
+    {
+        Screen.SetResolution(960, 540, false);
+    }
     public void clickHowtoPlay()
     {
         howToPlay.SetActive(true);

@@ -7,8 +7,13 @@ public class CameraControl : MonoBehaviour
     public GameObject player;
     Vector3 offset = Vector3.zero;
 
+    private void Awake()
+    {
+        Screen.SetResolution(960, 540, false);
+    }
     private void Start()
     {
+        
         offset = transform.position - player.transform.position;
 
     }
