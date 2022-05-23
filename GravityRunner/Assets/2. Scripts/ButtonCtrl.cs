@@ -19,10 +19,21 @@ public class ButtonCtrl : MonoBehaviour
         isHowToPlay = true;
 
     }
+
+    public void clickHtPX()
+    {
+        howToPlay.SetActive(false);
+        isHowToPlay = false;
+    }
     public void clickOption()
     {
         option.SetActive(true);
         isOption = true;
+    }
+    public void clickOptionX()
+    {
+        option.SetActive(false);
+        isOption = false;
     }
     public void clickReset()
     {
@@ -42,15 +53,15 @@ public class ButtonCtrl : MonoBehaviour
 
     private void Update()
     {
-        if(isHowToPlay && Input.GetKeyDown(KeyCode.Escape))
-        {
-            howToPlay.SetActive(false);
-            isHowToPlay = false;
-        }
-        if(isOption &&  Input.GetKeyDown(KeyCode.Escape))
-        {
-            option.SetActive(false);
-            isOption = false;
-        }
+        //if(isHowToPlay && Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    howToPlay.SetActive(false);
+        //    isHowToPlay = false;
+        //}
+        //if(isOption &&  Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    option.SetActive(false);
+        //    isOption = false;
+        //}
     }
 }

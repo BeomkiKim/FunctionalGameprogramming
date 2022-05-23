@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PassLevelDemo : MonoBehaviour
 {
     public int nextScene;
     public GameObject pauseImage;
+
 
     private void Start()
     {
@@ -27,13 +29,13 @@ public class PassLevelDemo : MonoBehaviour
 
         if (currentLevel >= PlayerPrefs.GetInt("levelAt"))
         {
-            PlayerPrefs.SetInt("levelAt", currentLevel + 1);
+            PlayerPrefs.SetInt("levelAt", currentLevel);
         }
         //SceneManager.LoadScene("LevelSelect");
     }
     public void timePlay()
     {
-        Time.timeScale = 1;
         pauseImage.SetActive(false);
+        Time.timeScale = 1;
     }
 }

@@ -28,8 +28,11 @@ public class GameManager : MonoBehaviour
     float secFloor;
 
 
+    public GameObject audioBGM;
+
     private void Start()
     {
+        audioBGM = GameObject.FindGameObjectWithTag("BGM");
         player = FindObjectOfType<PlayerControl>();
         highScoreText.text = "High : " + ((int)PlayerPrefs.GetFloat("Highscore")).ToString();
         if (clearUi == null) return;
@@ -38,6 +41,11 @@ public class GameManager : MonoBehaviour
         timeText.text = "00:00";
         finishTimeText.text = "00:00";
         clearTimeText.text = "00:00";
+
+
+        if (audioBGM == null) { return; }
+        Destroy(audioBGM);
+
     }
     public void sumScore()
     {

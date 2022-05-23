@@ -61,8 +61,9 @@ public class ItemSpawner_3 : MonoBehaviour
         time += Time.deltaTime;
         realTime += Time.deltaTime;
         if (realTime > 10.0f) { minDelay = 8.0f; maxDelay = 16.0f; }
-        if (realTime > 20.0f) { minDelay = 8.0f; maxDelay = 14.0f; }
-        if (realTime > 30.0f) { minDelay = 7.0f; maxDelay = 12.0f; }
+        if (realTime > 30.0f) { minDelay = 8.0f; maxDelay = 14.0f; }
+        if (realTime > 50.0f) { minDelay = 7.0f; maxDelay = 12.0f; }
+        if (realTime > 60.0f) { realTime = 0.0f; isFirst = false; }
 
         float delay = Random.Range(minDelay, maxDelay);
 
@@ -73,7 +74,7 @@ public class ItemSpawner_3 : MonoBehaviour
             isFirst = true;
 
         }
-        if (time > delay && isFirst)
+        if (time > delay && isFirst && realTime > 10.0f)
         {
 
             itemSpawn();

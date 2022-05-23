@@ -10,6 +10,7 @@ public class PlayerControl : MonoBehaviour
     public bool isGround = false;
     GameManager game;
 
+
     private void Start()
     {
         Time.timeScale = 1;

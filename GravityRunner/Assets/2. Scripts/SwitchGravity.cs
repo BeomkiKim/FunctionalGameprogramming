@@ -6,6 +6,9 @@ public class SwitchGravity : MonoBehaviour
 {
     Rigidbody rigid;
     public float gravity = 1000f;
+    public AudioSource switchSound;
+    public AudioClip gravitySound;
+
 
 
     private void Start()
@@ -19,6 +22,11 @@ public class SwitchGravity : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             gravity *= -1;
+            SwitchGravitySound();
         }
+    }
+    public void SwitchGravitySound()
+    {
+        switchSound.PlayOneShot(gravitySound);
     }
 }

@@ -8,6 +8,9 @@ public class PlayerFire : MonoBehaviour
     public GameObject bullet;
     public int bulletCount;
     public GameObject[] bulletImage;
+
+    public AudioSource gunSound;
+    public AudioClip bulletSound;
     private void Awake()
     {
         bulletCount = 0;
@@ -21,6 +24,7 @@ public class PlayerFire : MonoBehaviour
         {
             GameObject shoot = GameObject.Instantiate(bullet, gameObject.transform.position, bullet.transform.rotation) as GameObject;
             bulletCount += 1;
+            ShootSound();
 
         }
         if(bulletCount<0)
@@ -73,5 +77,10 @@ public class PlayerFire : MonoBehaviour
                 break;
 
         }
+    }
+
+    public void ShootSound()
+    {
+        gunSound.PlayOneShot(bulletSound);
     }
 }

@@ -33,12 +33,12 @@ public class TrapSpawner_1 : MonoBehaviour
         time += Time.deltaTime;
         realTime += Time.deltaTime;
 
-        if (realTime > 10.0f) { minDelay = 5.5f; maxDelay = 9.0f; }
-        if (realTime > 20.0f) { minDelay = 5.0f; maxDelay = 8.0f; }
-        if (realTime > 30.0f) { level = 2; minDelay = 4.5f; maxDelay = 7.0f; }
-        if (realTime > 40.0f) { minDelay = 4.0f; maxDelay = 6.0f; }
-        if (realTime > 50.0f) { level = 3; minDelay = 3.5f; maxDelay = 5.0f; }
-        if (realTime > 60.0f) { level = 1; realTime = 0.0f; }
+        if (realTime > 10.0f) { minDelay = 5.25f; maxDelay = 8.3f; }
+        if (realTime > 20.0f) { minDelay = 4.75f; maxDelay = 7.3f; }
+        if (realTime > 30.0f) { level = 2; minDelay = 4.25f; maxDelay = 6.3f; }
+        if (realTime > 40.0f) { minDelay = 3.75f; maxDelay = 5.3f; }
+        if (realTime > 50.0f) { level = 3; minDelay = 3.25f; maxDelay = 4.3f; }
+        if (realTime > 60.0f) { level = 1; realTime = 0.0f; isFirst = false; }
 
 
         float delay = Random.Range(minDelay, maxDelay);
@@ -50,7 +50,7 @@ public class TrapSpawner_1 : MonoBehaviour
             isFirst = true;
 
         }
-        if(time > delay && isFirst && !isCoroutine)
+        if(time > delay && isFirst && !isCoroutine && realTime > 10.0f)
         {
             float random = Random.Range(0, level);
             int intRandom = (int)random;
