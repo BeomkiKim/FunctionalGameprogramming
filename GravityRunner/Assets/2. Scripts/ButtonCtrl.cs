@@ -5,13 +5,27 @@ using UnityEngine;
 public class ButtonCtrl : MonoBehaviour
 {
     public GameObject howToPlay;
+    public GameObject[] howtoPlayCtrl;
     public GameObject option;
-    bool isOption = false;
+    public GameObject resetOption;
+    public bool isOption = false;
     bool isHowToPlay = false;
+    bool isResetOption = false;
 
     private void Awake()
     {
         Screen.SetResolution(960, 540, false);
+    }
+    public void clickNextPage()
+    {
+        howtoPlayCtrl[0].SetActive(false);
+        howtoPlayCtrl[1].SetActive(true);
+
+    }
+    public void clickBackPage()
+    {
+        howtoPlayCtrl[0].SetActive(true);
+        howtoPlayCtrl[1].SetActive(false);
     }
     public void clickHowtoPlay()
     {
@@ -35,10 +49,22 @@ public class ButtonCtrl : MonoBehaviour
         option.SetActive(false);
         isOption = false;
     }
+    public void clickNo()
+    {
+        resetOption.SetActive(false);
+        isResetOption = false;
+    }
     public void clickReset()
+    {
+        resetOption.SetActive(true);
+        isResetOption = true;
+    }
+    public void clickYes()
     {
         PlayerPrefs.DeleteAll();
         option.SetActive(false);
+        resetOption.SetActive(false);
+        isResetOption = false;
         isOption = false;
     }
     public void clickQuit()

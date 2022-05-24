@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject clearUi;
 
     PlayerControl player;
+    LevelTextSpawner levelTextSpawner;
     public float totalScore;
     public float highScore;
     public float timeScore;
@@ -24,27 +25,22 @@ public class GameManager : MonoBehaviour
     public Text finishTimeText;
     public Text clearTimeText;
     public Text highScoreText;
+    public Text levelText;
     float sec, min;
     float secFloor;
 
-
-    public GameObject audioBGM;
-
     private void Start()
     {
-        audioBGM = GameObject.FindGameObjectWithTag("BGM");
         player = FindObjectOfType<PlayerControl>();
+        levelTextSpawner = FindObjectOfType<LevelTextSpawner>();
         highScoreText.text = "High : " + ((int)PlayerPrefs.GetFloat("Highscore")).ToString();
         if (clearUi == null) return;
         if (clearTimeText == null) return;
+        if (levelText == null) return;
 
         timeText.text = "00:00";
         finishTimeText.text = "00:00";
         clearTimeText.text = "00:00";
-
-
-        if (audioBGM == null) { return; }
-        Destroy(audioBGM);
 
     }
     public void sumScore()
@@ -62,7 +58,11 @@ public class GameManager : MonoBehaviour
     {
         sumScore();
         failScoreText.text = string.Format("{0:0}", totalScore);
-        finishTimeText.text =min.ToString("00") + ":" + secFloor.ToString("00");
+        finishTimeText.text = min.ToString("00") + ":" + secFloor.ToString("00");
+        if (levelText != null)
+        {
+            levelText.text = levelTextSpawner.level.ToString();
+        }
         saveScore();
 
     }

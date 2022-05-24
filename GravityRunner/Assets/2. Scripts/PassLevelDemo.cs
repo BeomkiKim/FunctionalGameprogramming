@@ -8,6 +8,7 @@ public class PassLevelDemo : MonoBehaviour
 {
     public int nextScene;
     public GameObject pauseImage;
+    public bool isPause = false;
 
 
     private void Start()
@@ -20,6 +21,7 @@ public class PassLevelDemo : MonoBehaviour
         {
             Time.timeScale = 0;
             pauseImage.SetActive(true);
+            isPause = true;
         }
     }
 
@@ -36,6 +38,7 @@ public class PassLevelDemo : MonoBehaviour
     public void timePlay()
     {
         pauseImage.SetActive(false);
+        isPause = false;
         Time.timeScale = 1;
     }
 }

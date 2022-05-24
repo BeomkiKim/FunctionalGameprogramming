@@ -8,6 +8,8 @@ TagManager:
   - Monster
   - Dead
   - BGM
+  - StageBGM
+  - SoundManager
   layers:
   - Default
   - TransparentFX
