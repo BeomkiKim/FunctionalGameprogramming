@@ -312,7 +312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35.9, y: 4.3}
+  m_AnchoredPosition: {x: -40.5, y: 4.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &129532350
@@ -348,10 +348,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Tip. \uBAAC\uC2A4\uD130\uB098 \uC7A5\uC560\uBB3C\uC744 \uCC98\uCE58\uD560
-    \uC218\uB85D \uCD94\uAC00\uC810\uC218!\n\uB9C8\uC6B0\uC2A4 \uC88C\uD074\uB9AD\uC744
-    \uB204\uB974\uBA74 \uCD1D\uC54C\uC744 \uBC1C\uC0AC \uD560 \uC218 \uC788\uC73C\uB2C8\n\uCD5C\uB300\uD55C
-    \uB9CE\uC740 \uBAAC\uC2A4\uD130\uB098 \uC7A5\uC560\uBB3C\uC744 \uCC98\uCE58\uD558\uC790"
+  m_Text: "Tip. \uC801\uC744 \uCC98\uCE58\uD560 \uC218\uB85D \uCD94\uAC00\uC810\uC218!\n\uB9C8\uC6B0\uC2A4
+    \uC88C\uD074\uB9AD\uC744 \uB204\uB974\uBA74 \uCD1D\uC54C\uC744 \uBC1C\uC0AC \uD560
+    \uC218 \uC788\uC73C\uB2C8\n\uCD5C\uB300\uD55C \uB9CE\uC740 \uC801\uC744 \uCC98\uCE58\uD558\uC790(\uBD89\uC740\uC0C9
+    \uC624\uBE0C\uC81D\uD2B8)"
 --- !u!222 &129532351
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -394,7 +394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35.9, y: -18.7}
+  m_AnchoredPosition: {x: -40.5, y: -18.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &165422065
@@ -433,7 +433,8 @@ MonoBehaviour:
   m_Text: "Tip. \uC544\uC774\uD15C\uC744 \uD68D\uB4DD\uD560\uC218\uB85D \uCD94\uAC00\uC810\uC218!\n\uC544\uC774\uD15C\uC740
     \uC0DD\uC874\uC5D0 \uD070 \uB3C4\uC6C0\uC744 \uC904 \uBFD0 \uC544\uB2C8\uB77C
     \uC810\uC218\uB3C4 \uB9CE\uC774 \uC8FC\uB2C8\n\uCD5C\uB300\uD55C \uB9CE\uC774
-    \uD68D\uB4DD\uD574 \uACE0\uB4DD\uC810\uC744 \uB178\uB9AC\uC790"
+    \uD68D\uB4DD\uD574 \uACE0\uB4DD\uC810\uC744 \uB178\uB9AC\uC790(\uBCF4\uB77C\uC0C9,
+    \uCD08\uB85D\uC0C9 \uC624\uBE0C\uC81D\uD2B8)"
 --- !u!222 &165422066
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2648,7 +2649,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22.5, y: -15}
+  m_AnchoredPosition: {x: -25, y: -15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &731061022
@@ -2684,7 +2685,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Enemy : Life -1'
+  m_Text: "\uC0C9 \uC624\uBE0C\uC81D\uD2B8 : \uCDA9\uB3CC \uC2DC \uC0DD\uBA85 -1
+    \uB41C\uB2E4"
 --- !u!222 &731061023
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2878,7 +2880,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'ESC : Pause'
+  m_Text: "ESC : \uC77C\uC2DC\uC815\uC9C0"
 --- !u!222 &840083165
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3133,7 +3135,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35.9, y: 25.2}
+  m_AnchoredPosition: {x: -40.5, y: 25.2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &952808617
@@ -3311,7 +3313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22.5, y: 5}
+  m_AnchoredPosition: {x: -25, y: 5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974791566
@@ -3347,7 +3349,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Sheild : Invincible Time +5Sec'
+  m_Text: "\uC0C9 \uC624\uBE0C\uC81D\uD2B8 : \uC274\uB4DC, \uBB34\uC801\uC2DC\uAC04
+    5\uCD08 \uB298\uB824\uC900\uB2E4"
 --- !u!222 &974791567
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3630,7 +3633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28.743286, y: 22.5}
+  m_AnchoredPosition: {x: -35.06, y: 22.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1247569485
@@ -3660,13 +3663,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 50
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'LMC : Shoot'
+  m_Text: "\uB9C8\uC6B0\uC2A4 \uC88C\uD074\uB9AD : \uCD1D\uC54C \uBC1C\uC0AC"
 --- !u!222 &1247569486
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4895,7 +4898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22.5, y: -5}
+  m_AnchoredPosition: {x: -25, y: -5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737170369
@@ -4931,7 +4934,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Life : Life +1 (Max : 3)'
+  m_Text: "\uC0C9 \uC624\uBE0C\uC81D\uD2B8 : \uC0DD\uBA85 +1 (\uC0DD\uBA85 \uCD5C\uB300
+    : 3) \uD574\uC900\uB2E4"
 --- !u!222 &1737170370
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5194,7 +5198,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19.002884, y: 30}
+  m_AnchoredPosition: {x: -34.8, y: 30}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1852013972
@@ -5224,13 +5228,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 50
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Space : Change Gravity'
+  m_Text: "SPACE : \uC911\uB825 \uBC14\uAFB8\uAE30"
 --- !u!222 &1852013973
 CanvasRenderer:
   m_ObjectHideFlags: 0
