@@ -5,7 +5,7 @@ using UnityEngine;
 public class SwitchGravity : MonoBehaviour
 {
     Rigidbody rigid;
-    public float gravity = 1000f;
+    public float gravity = 1200f;
     public AudioSource switchSound;
     public AudioClip gravitySound;
 

@@ -6,9 +6,10 @@ public class ItemSpawner : MonoBehaviour
 {
     public int[] percentage =
     {
-        50,
+        40,
         30,
-        20
+        20,
+        10
     };
     [SerializeField]
     int total;

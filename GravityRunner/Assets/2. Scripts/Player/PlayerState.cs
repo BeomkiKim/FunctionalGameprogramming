@@ -1,20 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerState : MonoBehaviour
 {
+    [HideInInspector]
     public int life;
+    [HideInInspector]
     public int lifeCur;
+    [HideInInspector]
     public float sheildTime = 0.0f;
+    [HideInInspector]
+    public float maxSheildTime = 5.0f;
+
+    [HideInInspector]
+    public float hollsheildTime = 0.0f;
+    [HideInInspector]
+    public float maxhollSheildTime = 5.0f;
 
     private Renderer Renderer;
     public Material sheildMaterial;
-    
 
-
+    public GameObject heartUI;
     public GameObject[] heart;
     public GameObject sheildImage;
+    public GameObject hollSheild;
+    public GameObject hollSheildUI;
+    public Image sheildBar;
+    public Image hollSheildBar;
+    [HideInInspector]
     public int heartCount;
 
     public GameObject failUi;
@@ -60,18 +75,44 @@ public class PlayerState : MonoBehaviour
                 game.itemScore += 1;
                 sheildTime += 5.0f;
                 break;
+            case ItemCtrl.ItemKind.Holl:
+                hollSheild.SetActive(true);
+                hollSheildUI.SetActive(true);
+                hollsheildTime += 5.0f;
+                game.itemScore += 1;
+                break;
             case ItemCtrl.ItemKind.Empty:
                 break;
         }
     }
     private void Update()
     {
-        if(sheildTime > 0.0f)
+
+        if (sheildTime > 0.0f)
         {
             sheildTime -= Time.deltaTime;
+            sheildBar.fillAmount = sheildTime / maxSheildTime;
+            heartUI.SetActive(false);
         }
         else
+        {
             Renderer.material.color = Color.yellow;
+            heartUI.SetActive(true);
+        }
+
+        if(hollsheildTime > 0.0f)
+        {
+            hollsheildTime -= Time.deltaTime;
+            hollSheildBar.fillAmount = hollsheildTime / maxhollSheildTime;
+        }
+        if(hollsheildTime<=0.0f)
+        {
+            hollsheildTime = 0;
+            hollSheild.SetActive(false);
+            hollSheildUI.SetActive(false);
+        }
+
+
         if(lifeCur >= 3)
         {
             lifeCur = 3;
@@ -93,4 +134,5 @@ public class PlayerState : MonoBehaviour
 
         }
     }
+
 }

@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public enum StageLevel
+    {
+        Easy,
+        Hard,
+    }
+    public StageLevel stageLevel;
+
     public float clearTime;
     public float gameTime;
     public GameObject clearUi;
@@ -45,8 +52,16 @@ public class GameManager : MonoBehaviour
     }
     public void sumScore()
     {
-        totalScore = (timeScore*100) + (groundScore*200) + (itemScore*300) + (monsterScore * 400);
-       
+        switch(stageLevel)
+        {
+            case StageLevel.Easy:
+                totalScore = (timeScore * 100) + (groundScore * 200) + (itemScore * 300) + (monsterScore * 400);
+                break;
+            case StageLevel.Hard:
+                totalScore = (timeScore * 150) + (groundScore * 250) + (itemScore * 350) + (monsterScore * 450);
+                break;
+
+        }
     }
     public void saveScore()
     {

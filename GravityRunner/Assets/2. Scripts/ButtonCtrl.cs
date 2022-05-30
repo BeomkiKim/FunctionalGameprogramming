@@ -67,6 +67,7 @@ public class ButtonCtrl : MonoBehaviour
         isResetOption = false;
         isOption = false;
     }
+
     public void clickQuit()
     {
 

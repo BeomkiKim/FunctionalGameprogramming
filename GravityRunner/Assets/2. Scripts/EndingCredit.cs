@@ -8,7 +8,7 @@ public class EndingCredit : MonoBehaviour
     public GameObject text;
     public float textSpeed;
 
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(Ending());
     }
@@ -16,14 +16,14 @@ public class EndingCredit : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            SceneManager.LoadScene("TitleScene");
+            clickSkip();
         }
         text.transform.position = new Vector3(text.transform.position.x, text.transform.position.y + textSpeed, text.transform.position.z);
     }
 
     IEnumerator Ending()
     {
-        yield return new WaitForSeconds(30.0f);
+        yield return new WaitForSeconds(50.0f);
         clickSkip();
     }
     void clickSkip()

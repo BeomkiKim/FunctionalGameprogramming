@@ -150,9 +150,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dce7662f047428044bd9181b81c7b897, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bb7f83f1271de664cbc52e7cf885869d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -282,7 +282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e506f15ccc362eb42b7d32c80e11ad45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backGroundMaterial: {fileID: 0}
   cameraTransform: {fileID: 1263960396}
   speed: 0.2
 --- !u!64 &228624385
@@ -356,7 +355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228624383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.05, y: 1.99, z: 0}
+  m_LocalPosition: {x: 5.05, y: 2.26, z: 0}
   m_LocalScale: {x: 27, y: 15.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -533,6 +532,7 @@ GameObject:
   - component: {fileID: 1416923392}
   - component: {fileID: 1416923391}
   - component: {fileID: 1416923395}
+  - component: {fileID: 1416923390}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -540,6 +540,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1416923390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416923389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be56de7cfca5b294391ebcfc4822ffd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioBGM: {fileID: 0}
 --- !u!114 &1416923391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,8 +879,9 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uC81C\uC791\n\n\n\n\n\n\n\n\n\uC18C\uC18D   :   \uD64D\uC775\uB300\uD559\uAD50
-    \uAC8C\uC784\uD559\uBD80\n\n\n\n\n\n\n\n\n\n\uC804\uACF5   :   \uAC8C\uC784\uC18C\uD504\uC6E8\uC5B4\uC804\uACF5\n\n\n\n\n\n\n\n\n\n\uD559\uBC88  
-    :   B577005\n\n\n\n\n\n\n\n\n\n\uC774\uB984   :   \uAE40 \uBC94 \uAE30\n\n\n\n\n\n\n\n\n\n\uC9C0\uAE08\uBD80\uD130
+    \uAC8C\uC784\uD559\uBD80\n\n\n\n\n\n\n\n\n\n\uC804\uACF5   :   \uAC8C\uC784\uC18C\uD504\uD2B8\uC6E8\uC5B4\uC804\uACF5\n\n\n\n\n\n\n\n\n\n\uD559\uBC88  
+    :   B577005\n\n\n\n\n\n\n\n\n\n\uC774\uB984   :   \uAE40 \uBC94 \uAE30\n\n\n\n\n\n\n\n\n\uD50C\uB808\uC774
+    \uD574\uC8FC\uC154\uC11C \uAC10\uC0AC\uD569\uB2C8\uB2E4!!\n\n\n\n\n\n\n\n\n\uC9C0\uAE08\uBD80\uD130
     \uC2A4\uD14C\uC774\uC9C03\uC774 \uD574\uAE08\uB429\uB2C8\uB2E4.\n\n\n\n\n\n\n\n\nPress     
     Any     Key"
 --- !u!222 &2132449031

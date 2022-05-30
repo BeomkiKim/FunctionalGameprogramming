@@ -8,6 +8,7 @@ public class ItemCtrl : MonoBehaviour
     {
         Heart,
         Sheild,
+        Holl,
         Empty,
     };
 

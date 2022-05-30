@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class Stage1TextSpawner : MonoBehaviour
 {
+    public enum StageLevel
+    {
+        EASY,
+        HARD,
+    }
+    public StageLevel stageLevel;
     Text text;
     float time = 0;
     float fadeTime = 2.5f;
@@ -22,7 +28,7 @@ public class Stage1TextSpawner : MonoBehaviour
     {
         time = 0;
         Color alpha = text.color;
-        levelText.text = "50초를 버텨라!".ToString();
+        levelText.text = stageLevel+"모드\n50초를 버텨라!".ToString();
         yield return new WaitForSeconds(1.0f);
         while (alpha.a > 0f)
         {
