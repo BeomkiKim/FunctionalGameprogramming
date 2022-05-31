@@ -23,6 +23,7 @@ public class StageController : MonoBehaviour
             if(i+2>stageAt)
             {
                 stage[i].interactable = false;
+                
             }
         }
     }

@@ -19,6 +19,8 @@ public class SwitchGravity : MonoBehaviour
     private void Update()
     {
         rigid.AddForce(0.0f, -gravity * Time.deltaTime, 0);
+
+
         if(Input.GetKeyDown(KeyCode.Space))
         {
             gravity *= -1;

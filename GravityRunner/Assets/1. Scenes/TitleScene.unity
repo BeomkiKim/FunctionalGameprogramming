@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 8c5707dd5000ab840905b6677509c442, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: a3e2ac1bae7606c48bc139b0fbe39ad4, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -433,8 +433,8 @@ MonoBehaviour:
   m_Text: "Tip. \uC544\uC774\uD15C\uC744 \uD68D\uB4DD\uD560\uC218\uB85D \uCD94\uAC00\uC810\uC218!\n\uC544\uC774\uD15C\uC740
     \uC0DD\uC874\uC5D0 \uD070 \uB3C4\uC6C0\uC744 \uC904 \uBFD0 \uC544\uB2C8\uB77C
     \uC810\uC218\uB3C4 \uB9CE\uC774 \uC8FC\uB2C8\n\uCD5C\uB300\uD55C \uB9CE\uC774
-    \uD68D\uB4DD\uD574 \uACE0\uB4DD\uC810\uC744 \uB178\uB9AC\uC790(\uBCF4\uB77C\uC0C9,
-    \uCD08\uB85D\uC0C9 \uC624\uBE0C\uC81D\uD2B8)"
+    \uD68D\uB4DD\uD574 \uACE0\uB4DD\uC810\uC744 \uB178\uB9AC\uC790\n(\uBCF4\uB77C\uC0C9,
+    \uCD08\uB85D\uC0C9, \uB178\uB791\uC0C9 \uC624\uBE0C\uC81D\uD2B8)"
 --- !u!222 &165422066
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2295,8 +2295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3e5e3006937814bbdeb722c1987a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage1Obejct: {fileID: 0}
-  stage2Obejct: {fileID: 0}
 --- !u!114 &540953251
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -173,12 +173,31 @@ public class LevelTextSpawner : MonoBehaviour
             text.color = alpha;
             yield return null;
         }
+        time = 0;
+        yield return new WaitForSeconds(0.3f);
+        levelText.text = "지금부터 점수가 1.5배가 됩니다.".ToString(); 
+        while (alpha.a < 1f)
+        {
+            time += Time.deltaTime / fadeTime;
+            alpha.a = Mathf.Lerp(0, 1, time);
+            text.color = alpha;
+            yield return null;
+        }
+        time = 0;
+        yield return new WaitForSeconds(1.0f);
+        while (alpha.a > 0f)
+        {
+            time += Time.deltaTime / fadeTime;
+            alpha.a = Mathf.Lerp(1, 0, time);
+            text.color = alpha;
+            yield return null;
+        }
 
 
 
         //level7
         time = 0;
-        yield return new WaitForSeconds(54f);
+        yield return new WaitForSeconds(52.7f);
         level = 7;
         levelText.text = "LEVEL " + level.ToString();
         while (alpha.a < 1f)
@@ -204,7 +223,27 @@ public class LevelTextSpawner : MonoBehaviour
         time = 0;
         yield return new WaitForSeconds(54f);
         level = 8;
+        
         levelText.text = "LEVEL " + level.ToString();
+        while (alpha.a < 1f)
+        {
+            time += Time.deltaTime / fadeTime;
+            alpha.a = Mathf.Lerp(0, 1, time);
+            text.color = alpha;
+            yield return null;
+        }
+        time = 0;
+        yield return new WaitForSeconds(1.0f);
+        while (alpha.a > 0f)
+        {
+            time += Time.deltaTime / fadeTime;
+            alpha.a = Mathf.Lerp(1, 0, time);
+            text.color = alpha;
+            yield return null;
+        }
+        time = 0;
+        yield return new WaitForSeconds(0.3f);
+        levelText.text = "지금부터 점수가 2배가 됩니다.".ToString();
         while (alpha.a < 1f)
         {
             time += Time.deltaTime / fadeTime;
@@ -226,7 +265,7 @@ public class LevelTextSpawner : MonoBehaviour
 
         //level9
         time = 0;
-        yield return new WaitForSeconds(54f);
+        yield return new WaitForSeconds(52.7f);
         level = 9;
         levelText.text = "LEVEL " + level.ToString();
         while (alpha.a < 1f)

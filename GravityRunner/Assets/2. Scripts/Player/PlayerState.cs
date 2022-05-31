@@ -19,8 +19,7 @@ public class PlayerState : MonoBehaviour
     [HideInInspector]
     public float maxhollSheildTime = 5.0f;
 
-    private Renderer Renderer;
-    public Material sheildMaterial;
+
 
     public GameObject heartUI;
     public GameObject[] heart;
@@ -36,12 +35,16 @@ public class PlayerState : MonoBehaviour
 
     GameManager game;
     PlayerControl player;
+    PlayerMaterial playerMaterial;
 
+    public AudioSource audioSource;
+    public AudioClip itemClip;
+    public AudioClip damageClip;
     private void Start()
     {
         game = FindObjectOfType<GameManager>();
         player = GetComponent<PlayerControl>();
-        Renderer = GetComponent<Renderer>();
+        playerMaterial = GetComponent<PlayerMaterial>();
         lifeCur = life;
         heartCount = life - 1;
     }
@@ -51,6 +54,9 @@ public class PlayerState : MonoBehaviour
         {
             lifeCur -= 1;
             heart[heartCount].SetActive(false);
+            playerMaterial.isDamaging = true;
+            if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(damageClip);
             heartCount -= 1;
         }
 
@@ -62,24 +68,31 @@ public class PlayerState : MonoBehaviour
         {
             case ItemCtrl.ItemKind.Heart:
                 game.itemScore += 2;
+                if (!audioSource.isPlaying)
+                    audioSource.PlayOneShot(itemClip);
                 if (lifeCur < 3)
                 {
                     lifeCur += 1;
                     heartCount += 1;
+                    playerMaterial.isHearting = true;
                     heart[heartCount].SetActive(true);
                 }
                 break;
             case ItemCtrl.ItemKind.Sheild:
                 sheildImage.SetActive(true);
-                Renderer.material = sheildMaterial;
+                if(!audioSource.isPlaying)
+                    audioSource.PlayOneShot(itemClip);
                 game.itemScore += 1;
+                playerMaterial.isSheilding = true;
                 sheildTime += 5.0f;
                 break;
             case ItemCtrl.ItemKind.Holl:
                 hollSheild.SetActive(true);
                 hollSheildUI.SetActive(true);
+                if (!audioSource.isPlaying)
+                    audioSource.PlayOneShot(itemClip);
                 hollsheildTime += 5.0f;
-                game.itemScore += 1;
+                game.itemScore += 3;
                 break;
             case ItemCtrl.ItemKind.Empty:
                 break;
@@ -96,18 +109,19 @@ public class PlayerState : MonoBehaviour
         }
         else
         {
-            Renderer.material.color = Color.yellow;
             heartUI.SetActive(true);
         }
 
         if(hollsheildTime > 0.0f)
         {
             hollsheildTime -= Time.deltaTime;
+            playerMaterial.isHolling = true;
             hollSheildBar.fillAmount = hollsheildTime / maxhollSheildTime;
         }
         if(hollsheildTime<=0.0f)
         {
             hollsheildTime = 0;
+            playerMaterial.isHolling = false;
             hollSheild.SetActive(false);
             hollSheildUI.SetActive(false);
         }
@@ -124,6 +138,7 @@ public class PlayerState : MonoBehaviour
         if(sheildTime<=0)
         {
             sheildTime = 0;
+            playerMaterial.isSheilding = false;
             sheildImage.SetActive(false);
         }
 

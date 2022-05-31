@@ -5,13 +5,6 @@ using UnityEngine.UI;
 
 public class Stage2TextSpawn : MonoBehaviour
 {
-    public enum StageLevel
-    {
-        EASY,
-        HARD,
-    }
-    public StageLevel stageLevel;
-
     Text text;
     float time = 0;
     float fadeTime = 2.5f;
@@ -29,7 +22,7 @@ public class Stage2TextSpawn : MonoBehaviour
     {
         time = 0;
         Color alpha = text.color;
-        levelText.text = stageLevel + "모드\n60초를 버텨라!".ToString();
+        levelText.text = "60초를 버텨라!".ToString();
         yield return new WaitForSeconds(1.0f);
         while (alpha.a > 0f)
         {

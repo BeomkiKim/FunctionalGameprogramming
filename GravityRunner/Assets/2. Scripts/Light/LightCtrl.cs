@@ -39,5 +39,29 @@ public class LightCtrl : MonoBehaviour
         theLight.intensity = 120f;
         yield return new WaitForSeconds(0.5f);
         theLight.intensity = 0f;
+        yield return new WaitForSeconds(0.5f);
+        theLight.intensity = 120f;
+        yield return new WaitForSeconds(0.5f);
+        theLight.intensity = 0f;
+        yield return new WaitForSeconds(0.5f);
+        theLight.intensity = 120f;
+        yield return new WaitForSeconds(0.5f);
+        theLight.intensity = 0f;
+        yield return new WaitForSeconds(0.5f);
+        theLight.intensity = 120f;
+        yield return new WaitForSeconds(0.5f);
+        theLight.intensity = 0f;
+        yield return new WaitForSeconds(0.5f);
+        theLight.intensity = 120f;
+        yield return new WaitForSeconds(0.5f);
+        theLight.intensity = 0f;
+        yield return new WaitForSeconds(0.5f);
+        theLight.intensity = 120f;
+        yield return new WaitForSeconds(0.5f);
+        theLight.intensity = 0f;
+        yield return new WaitForSeconds(0.5f);
+        theLight.intensity = 120f;
+        yield return new WaitForSeconds(0.5f);
+        theLight.intensity = 0f;
     }
 }

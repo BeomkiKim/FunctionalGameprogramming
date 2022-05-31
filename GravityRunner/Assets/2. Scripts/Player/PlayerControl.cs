@@ -35,8 +35,6 @@ public class PlayerControl : MonoBehaviour
     public void Dead()
     {
         game.failGame();
-
-        Time.timeScale = 0;
         FailUi.SetActive(true);
     }
     void Update()
