@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1212768650}
-  DownLevelDataText: {fileID: 4900000, guid: a07e220e4a7761c4eb0923fca61df328, type: 3}
+  DownLevelDataText: {fileID: 4900000, guid: a81a702731419c3458f0a36eca613473, type: 3}
 --- !u!114 &142084255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1212768650}
-  UpLevelDataText: {fileID: 4900000, guid: 4e2a3cd59c0d39c45943cc1a21cc2c7f, type: 3}
+  UpLevelDataText: {fileID: 4900000, guid: c7921cc5100a2084390a3d8169053887, type: 3}
 --- !u!114 &142084256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4901,7 +4901,7 @@ MonoBehaviour:
   isHearting: 0
   hollMaterial: {fileID: 2100000, guid: 0cb3a027a2db38e419e58b4e805cb6c5, type: 2}
   isHolling: 0
-  damageMaterial: {fileID: 2100000, guid: d27226ba07f921445bd7708d71a74ddd, type: 2}
+  damageMaterial: {fileID: 2100000, guid: 8a3994e5254bb144ca29f1e835b3c259, type: 2}
   isDamaging: 0
 --- !u!1 &1215518608
 GameObject:

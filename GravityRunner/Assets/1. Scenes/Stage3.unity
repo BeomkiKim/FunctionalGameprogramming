@@ -281,8 +281,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockPrefabs:
-  - {fileID: 3507848216801195205, guid: 34dc4bc9906338e4c918e594fd4679f2, type: 3}
-  - {fileID: 3168250604016523722, guid: 8e24491050bc61c45b981c52b7be4d8a, type: 3}
+  - {fileID: 3168250604016523722, guid: 8a237de9d6aea6d42a03e7daaeb9dfa1, type: 3}
+  - {fileID: 3168250604016523722, guid: 0a308d973e37e724c8365d9586d7736e, type: 3}
 --- !u!114 &142084254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,8 +324,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockPrefabs:
-  - {fileID: 3168250604016523722, guid: 8e24491050bc61c45b981c52b7be4d8a, type: 3}
-  - {fileID: 3507848216801195205, guid: 34dc4bc9906338e4c918e594fd4679f2, type: 3}
+  - {fileID: 3168250604016523722, guid: 8a237de9d6aea6d42a03e7daaeb9dfa1, type: 3}
+  - {fileID: 3168250604016523722, guid: 0a308d973e37e724c8365d9586d7736e, type: 3}
 --- !u!114 &142084257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3718,7 +3718,7 @@ MonoBehaviour:
   isHearting: 0
   hollMaterial: {fileID: 2100000, guid: 0cb3a027a2db38e419e58b4e805cb6c5, type: 2}
   isHolling: 0
-  damageMaterial: {fileID: 2100000, guid: d27226ba07f921445bd7708d71a74ddd, type: 2}
+  damageMaterial: {fileID: 2100000, guid: 8a3994e5254bb144ca29f1e835b3c259, type: 2}
   isDamaging: 0
 --- !u!1 &1219978593
 GameObject:

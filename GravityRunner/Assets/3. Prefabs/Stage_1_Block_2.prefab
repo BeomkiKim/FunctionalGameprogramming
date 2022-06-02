@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 3168250604016523721}
   - component: {fileID: -2524910727987389465}
   m_Layer: 0
-  m_Name: BlueBlock
+  m_Name: Stage_1_Block_2
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

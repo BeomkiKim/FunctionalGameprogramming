@@ -15,6 +15,7 @@ public class PassLevelDemo : MonoBehaviour
 
 
 
+
     private void Start()
     {
         nextScene = SceneManager.GetActiveScene().buildIndex + 1;
@@ -22,11 +23,10 @@ public class PassLevelDemo : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape)&& Time.timeScale != 0)
         {
             Time.timeScale = 0;
             pauseImage.SetActive(true);
-            isPause = true;
         }
     }
 
@@ -43,14 +43,19 @@ public class PassLevelDemo : MonoBehaviour
     }
     public void timePlay()
     {
+   
         pauseImage.SetActive(false);
-        isPause = false;
+
+
         StartCoroutine(PauseCount());
     }
     IEnumerator PauseCount()
     {
+
         if (!audioSource.isPlaying)
             audioSource.PlayOneShot(pauseCountClip);
+
+
         count[0].SetActive(true);
         yield return new WaitForSecondsRealtime(1.0f);
         count[0].SetActive(false);
@@ -63,8 +68,8 @@ public class PassLevelDemo : MonoBehaviour
         count[3].SetActive(true);
         yield return new WaitForSecondsRealtime(0.5f);
         count[3].SetActive(false);
-        Time.timeScale = 1;
 
+        Time.timeScale = 1;
 
     }
 }

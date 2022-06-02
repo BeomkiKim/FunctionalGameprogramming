@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3507848216801195204}
   - component: {fileID: -5231864786523094388}
   m_Layer: 0
-  m_Name: RedBlock
+  m_Name: Stage_1_Block_1
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d27226ba07f921445bd7708d71a74ddd, type: 2}
+  - {fileID: 2100000, guid: 9c0237132e5de9d48b7c7d2a4db97d28, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
