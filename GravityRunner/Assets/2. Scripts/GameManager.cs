@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Timers;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     public float clearTime;
     public float gameTime;
     public GameObject clearUi;
+    
 
     PlayerControl player;
     LevelTextSpawner levelTextSpawner;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
     public float timeScore;
     public float groundScore;
     public int itemScore;
+    public int itemRealCount;
     public int monsterScore;
 
     public Text scoreText;
@@ -40,6 +43,19 @@ public class GameManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip clear;
     public AudioClip fail;
+
+    [Header("切室備")]
+    public Text groundTime;
+    public Text groundTimeScore;
+    public Text itemCount;
+    public Text itemCountScore;
+    public Text enemyCount;
+    public Text enemyCountScore;
+
+    public float isGround;
+    public float isItem;
+    public float isEnemy;
+
 
     private void Start()
     {
@@ -58,12 +74,30 @@ public class GameManager : MonoBehaviour
     }
     public void sumScore()
     {
-        if(gameTime<300)
-            totalScore = (timeScore * 100) + (groundScore * 200) + (itemScore * 300) + (monsterScore * 400);
-        if(gameTime>=300 && gameTime < 420)
-            totalScore = (timeScore * 150) + (groundScore * 300) + (itemScore * 450) + (monsterScore * 600);
+        if (gameTime < 240)
+        {
+            isGround = groundScore * 200;
+            isItem = itemScore * 300;
+            isEnemy = monsterScore * 400;
+            totalScore = (timeScore * 100) + isGround + isItem + isEnemy;
+            
+        }
+        if (gameTime >= 240 && gameTime < 480)
+        {
+            isGround = groundScore * 300;
+            isItem = itemScore * 450;
+            isEnemy = monsterScore * 600;
+            totalScore = (timeScore * 150) + isGround + isItem + isEnemy;
+            
+        }
         if (gameTime >= 420)
-            totalScore = (timeScore * 200) + (groundScore * 400) + (itemScore * 600) + (monsterScore * 800);
+        {
+            isGround = groundScore * 400;
+            isItem = itemScore * 600;
+            isEnemy = monsterScore * 800;
+            totalScore = (timeScore * 200) + isGround + isItem + isEnemy;
+            
+        }
     }
     public void saveScore()
     {
@@ -76,6 +110,14 @@ public class GameManager : MonoBehaviour
         sumScore();
         failScoreText.text = string.Format("{0:0}", totalScore);
         finishTimeText.text = min.ToString("00") + ":" + secFloor.ToString("00");
+
+        groundTime.text = groundScore.ToString("00.00") + "段";
+        groundTimeScore.text = isGround.ToString("00");
+        itemCount.text = itemRealCount.ToString();
+        itemCountScore.text = isItem.ToString();
+        enemyCount.text = monsterScore.ToString();
+        enemyCountScore.text = isEnemy.ToString();
+
         
         if (levelText != null)
         {
@@ -84,10 +126,28 @@ public class GameManager : MonoBehaviour
         switch (stage)
         {
             case Stage.End:
-                if(!audioSource.isPlaying)
+                failScoreText.text = string.Format("{0:0}", totalScore);
+                finishTimeText.text = min.ToString("00") + ":" + clearTime.ToString("00");
+
+                groundTime.text = groundScore.ToString("00.00") + "段";
+                groundTimeScore.text = isGround.ToString("00");
+                itemCount.text = itemRealCount.ToString();
+                itemCountScore.text = isItem.ToString();
+                enemyCount.text = monsterScore.ToString();
+                enemyCountScore.text = isEnemy.ToString();
+                if (!audioSource.isPlaying)
                 audioSource.PlayOneShot(fail);
                 break;
             case Stage.EndLess:
+                failScoreText.text = string.Format("{0:0}", totalScore);
+                finishTimeText.text = min.ToString("00") + ":" + secFloor.ToString("00");
+
+                groundTime.text = groundScore.ToString("00.00") + "段";
+                groundTimeScore.text = isGround.ToString("00");
+                itemCount.text = itemRealCount.ToString();
+                itemCountScore.text = isItem.ToString();
+                enemyCount.text = monsterScore.ToString();
+                enemyCountScore.text = isEnemy.ToString();
                 if (PlayerPrefs.GetFloat("Highscore") < totalScore && !audioSource.isPlaying)
                     audioSource.PlayOneShot(clear);
                 if(PlayerPrefs.GetFloat("Highscore") >= totalScore && !audioSource.isPlaying)
@@ -101,36 +161,82 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        gameTime += Time.deltaTime;
-        timeScore += Time.deltaTime;
-        sec += Time.deltaTime;
+        if (player.isGround)
+        {
 
-        sumScore();
-        updateScoreText.text = string.Format("{0:0}", totalScore);
-        
+            groundScore += Time.deltaTime * 3.6f;
+        }
+        switch (stage)
+        {
+            case Stage.End:
+                gameTime += Time.deltaTime;
+                timeScore += Time.deltaTime;
 
-        secFloor = Mathf.Floor(sec);
-        if(secFloor == 60)
-        {
-            sec = 0;
-            min++;
+                clearTime -= Time.deltaTime;
+                if (Time.timeScale != 0)
+                    sumScore();
+                updateScoreText.text = string.Format("{0:0}", totalScore);
+
+                timeText.text = min.ToString("00") + ":" + clearTime.ToString("00");
+
+                if (clearTime<= 0)
+                {
+                    sumScore();
+                    saveScore();
+                    scoreText.text = string.Format("{0:0}", totalScore);
+                    clearTimeText.text = min.ToString("00") + ":" + gameTime.ToString("00");
+
+                    groundTime.text = groundScore.ToString("00.00") + "段";
+                    groundTimeScore.text = isGround.ToString("00");
+                    itemCount.text = itemRealCount.ToString();
+                    itemCountScore.text = isItem.ToString();
+                    enemyCount.text = monsterScore.ToString();
+                    enemyCountScore.text = isEnemy.ToString();
+
+                    clearUi.SetActive(true);
+                    if (!audioSource.isPlaying)
+                        audioSource.PlayOneShot(clear);
+                    Time.timeScale = 0;
+                }
+                break;
+            case Stage.EndLess:
+                gameTime += Time.deltaTime;
+                timeScore += Time.deltaTime;
+                sec += Time.deltaTime;
+                if (Time.timeScale != 0)
+                    sumScore();
+                updateScoreText.text = string.Format("{0:0}", totalScore);
+
+
+                secFloor = Mathf.Floor(sec);
+                if (secFloor == 60)
+                {
+                    sec = 0;
+                    min++;
+                }
+                timeText.text = min.ToString("00") + ":" + secFloor.ToString("00");
+
+                if (gameTime >= clearTime)
+                {
+                    sumScore();
+                    saveScore();
+                    scoreText.text = string.Format("{0:0}", totalScore);
+                    clearTimeText.text = min.ToString("00") + ":" + secFloor.ToString("00");
+
+                    groundTime.text = groundScore.ToString("00.00") + "段";
+                    groundTimeScore.text = isGround.ToString("00");
+                    itemCount.text = itemRealCount.ToString();
+                    itemCountScore.text = isItem.ToString();
+                    enemyCount.text = monsterScore.ToString();
+                    enemyCountScore.text = isEnemy.ToString();
+
+                    clearUi.SetActive(true);
+                    if (!audioSource.isPlaying)
+                        audioSource.PlayOneShot(clear);
+                    Time.timeScale = 0;
+                }
+                break;
         }
-        timeText.text = min.ToString("00") + ":" + secFloor.ToString("00");
-        
-        if(player.isGround)
-        {
-            groundScore += Time.deltaTime;
-        }
-        if(gameTime >= clearTime)
-        {
-            sumScore();
-            saveScore();
-            scoreText.text = string.Format("{0:0}", totalScore);
-            clearTimeText.text = min.ToString("00") + ":" + secFloor.ToString("00");
-            clearUi.SetActive(true);
-            if(!audioSource.isPlaying)
-                audioSource.PlayOneShot(clear);
-            Time.timeScale = 0;
-        }
+
     }
 }

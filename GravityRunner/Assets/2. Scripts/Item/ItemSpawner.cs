@@ -28,7 +28,7 @@ public class ItemSpawner : MonoBehaviour
     private void Start()
     {
         time = 0.0f;
-        waitingTime = 25;
+        waitingTime = 23;
         minDelay = 4;
         maxDelay = 6;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -61,9 +61,11 @@ public class ItemSpawner : MonoBehaviour
     {
         time += Time.deltaTime;
         realTime += Time.deltaTime;
-        if (realTime > 10.0f) { minDelay = 6.0f; maxDelay = 12.0f; }
-        if (realTime > 30.0f) { minDelay = 5.0f; maxDelay = 10.0f; }
-        if (realTime > 50.0f) { minDelay = 4.0f; maxDelay = 8.0f; }
+        if (realTime > 10.0f && realTime <= 20) { minDelay = 6.0f; maxDelay = 9.0f; }
+        if (realTime > 20.0f && realTime <= 30) { minDelay = 5.5f; maxDelay = 8.5f; }
+        if (realTime > 30.0f && realTime <= 40) { minDelay = 5.0f; maxDelay = 8.0f; }
+        if (realTime > 40.0f && realTime <= 50) { minDelay = 4.5f; maxDelay = 7.5f; }
+        if (realTime > 50.0f && realTime <= 60) { minDelay = 4.0f; maxDelay = 7.0f; }
         if (realTime > 60.0f) { realTime = 0.0f; isFirst = false; }
 
         float delay = Random.Range(minDelay, maxDelay);

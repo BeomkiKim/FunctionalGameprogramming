@@ -10,6 +10,7 @@ TagManager:
   - BGM
   - StageBGM
   - SoundManager
+  - ItemText
   layers:
   - Default
   - TransparentFX
@@ -46,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Top
+    uniqueID: 2923662453
     locked: 0

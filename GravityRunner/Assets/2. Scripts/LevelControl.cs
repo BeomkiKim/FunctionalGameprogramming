@@ -108,7 +108,7 @@ public class LevelControl : MonoBehaviour
     {
         block.blockType = Block.TYPE.FLOOR;
         block.maxCount = 15;
-        block.height = -30;
+        block.height = -10;
         block.currentCount = 0;
     }
 

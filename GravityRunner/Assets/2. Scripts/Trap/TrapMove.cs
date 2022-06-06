@@ -10,7 +10,7 @@ public class TrapMove : MonoBehaviour
 
     private void Update()
     {
-        speedRandom = Random.Range(-10, -5);
+        speedRandom = Random.Range(-2.5f, -1.25f);
 
         time += Time.deltaTime;
         Vector3 velocity = GetComponent<Rigidbody>().velocity;

@@ -15,12 +15,13 @@ public class ItemCtrl : MonoBehaviour
     public ItemKind kind;
     float destroyTime;
 
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
             PlayerState player = other.GetComponent<PlayerState>();
+            ItemScoreCtrl itemScore = GameObject.Find("ItemScore").GetComponent<ItemScoreCtrl>();
+            itemScore.getItem(kind);
             player.GetItem(kind);
             Destroy(gameObject);
         }

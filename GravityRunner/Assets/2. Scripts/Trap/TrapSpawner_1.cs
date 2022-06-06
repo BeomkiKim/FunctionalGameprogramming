@@ -21,7 +21,7 @@ public class TrapSpawner_1 : MonoBehaviour
     {
         level = 1;
         time = 0.0f;
-        waitingTime = 15;
+        waitingTime = 13;
         minDelay = 4;
         maxDelay = 6;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -33,11 +33,11 @@ public class TrapSpawner_1 : MonoBehaviour
         time += Time.deltaTime;
         realTime += Time.deltaTime;
 
-        if (realTime > 10.0f) { minDelay = 5.25f; maxDelay = 8.3f; }
-        if (realTime > 20.0f) { minDelay = 4.75f; maxDelay = 7.3f; }
-        if (realTime > 30.0f) { level = 2; minDelay = 4.25f; maxDelay = 6.3f; }
-        if (realTime > 40.0f) { minDelay = 3.75f; maxDelay = 5.3f; }
-        if (realTime > 50.0f) { level = 3; minDelay = 3.25f; maxDelay = 4.3f; }
+        if (realTime > 10.0f && realTime <= 20) { minDelay = 5.25f; maxDelay = 6.2f; }
+        if (realTime > 20.0f && realTime <= 30) { minDelay = 4.75f; maxDelay = 5.7f; }
+        if (realTime > 30.0f && realTime <= 40) { level = 2; minDelay = 4.25f; maxDelay = 5.2f; }
+        if (realTime > 40.0f && realTime <= 50) { minDelay = 3.75f; maxDelay = 4.8f; }
+        if (realTime > 50.0f && realTime <= 60) { level = 3; minDelay = 3.25f; maxDelay = 4.3f; }
         if (realTime > 60.0f) { level = 1; realTime = 0.0f; isFirst = false; }
 
 

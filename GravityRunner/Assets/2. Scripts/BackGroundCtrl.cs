@@ -17,7 +17,7 @@ public class BackGroundCtrl : MonoBehaviour
     }
     private void Update()
     {
-        Vector2 backGround = cameraTransform.position;
+        Vector3 backGround = new Vector3(cameraTransform.position.x, cameraTransform.position.y, 6);
         transform.position = backGround;
 
         offset += Time.deltaTime * speed;

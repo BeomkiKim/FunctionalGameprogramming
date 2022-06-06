@@ -27,6 +27,7 @@ public class PassLevelDemo : MonoBehaviour
         {
             Time.timeScale = 0;
             pauseImage.SetActive(true);
+            isPause = true;
         }
     }
 
@@ -70,6 +71,7 @@ public class PassLevelDemo : MonoBehaviour
         count[3].SetActive(false);
 
         Time.timeScale = 1;
+        isPause = false;
 
     }
 }

@@ -37,6 +37,8 @@ public class PlayerState : MonoBehaviour
     PlayerControl player;
     PlayerMaterial playerMaterial;
 
+
+
     public AudioSource audioSource;
     public AudioClip itemClip;
     public AudioClip damageClip;
@@ -68,6 +70,7 @@ public class PlayerState : MonoBehaviour
         {
             case ItemCtrl.ItemKind.Heart:
                 game.itemScore += 2;
+                game.itemRealCount += 1;
                 if (!audioSource.isPlaying)
                     audioSource.PlayOneShot(itemClip);
                 if (lifeCur < 3)
@@ -83,6 +86,7 @@ public class PlayerState : MonoBehaviour
                 if(!audioSource.isPlaying)
                     audioSource.PlayOneShot(itemClip);
                 game.itemScore += 1;
+                game.itemRealCount += 1;
                 playerMaterial.isSheilding = true;
                 sheildTime += 5.0f;
                 break;
@@ -91,8 +95,9 @@ public class PlayerState : MonoBehaviour
                 hollSheildUI.SetActive(true);
                 if (!audioSource.isPlaying)
                     audioSource.PlayOneShot(itemClip);
-                hollsheildTime += 5.0f;
+                hollsheildTime += 60.0f;
                 game.itemScore += 3;
+                game.itemRealCount += 1;
                 break;
             case ItemCtrl.ItemKind.Empty:
                 break;

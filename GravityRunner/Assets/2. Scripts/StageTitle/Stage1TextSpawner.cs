@@ -22,7 +22,7 @@ public class Stage1TextSpawner : MonoBehaviour
     {
         time = 0;
         Color alpha = text.color;
-        levelText.text = "50ÃÊ¸¦ ¹öÅß¶ó!".ToString();
+        levelText.text = "45ÃÊ¸¦ ¹öÅß¶ó!".ToString();
         yield return new WaitForSeconds(1.0f);
         while (alpha.a > 0f)
         {

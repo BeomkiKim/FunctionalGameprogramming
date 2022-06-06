@@ -100,7 +100,7 @@ public class UpLevelControl : MonoBehaviour
     {
         block.blockType = UpBlock.TYPE.HOLE;
         block.maxCount = 15;
-        block.height = 50;
+        block.height = 30;
         block.currentCount = 0;
     }
 

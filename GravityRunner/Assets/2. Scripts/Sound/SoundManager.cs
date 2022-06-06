@@ -11,7 +11,7 @@ public class SoundManager : MonoBehaviour
     ButtonCtrl button;
     PassLevelDemo pass;
 
-    private void Start()
+    private void Awake()
     {
         button = GetComponent<ButtonCtrl>();
         pass = GetComponent<PassLevelDemo>();
@@ -19,11 +19,15 @@ public class SoundManager : MonoBehaviour
             return;
         if (pass == null)
             return;
+    }
+    private void OnEnable()
+    {
+
 
         if (!PlayerPrefs.HasKey("musicVolume"))
         {
-            PlayerPrefs.SetFloat("musicVolume", 1);
-            load();
+            PlayerPrefs.SetFloat("musicVolume", 0.5f);
+            save();
         }
         else
         {
@@ -34,7 +38,7 @@ public class SoundManager : MonoBehaviour
     {
         if (button != null && pass == null)
         {
-            if (volumSlider.value == 0 && button.isOption)
+            if (volumSlider.value <= 0 && button.isOption)
             {
                 soundImage[0].SetActive(false);
                 soundImage[1].SetActive(true);

@@ -21,7 +21,7 @@ public class TrapSpawner_2 : MonoBehaviour
     {
         level = 1;
         time = 0.0f;
-        waitingTime = 20;
+        waitingTime = 18;
         minDelay = 4;
         maxDelay = 6;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -32,11 +32,11 @@ public class TrapSpawner_2 : MonoBehaviour
     {
         time += Time.deltaTime;
         realTime += Time.deltaTime;
-        if (realTime > 10.0f) { minDelay = 5.5f; maxDelay = 8.6f; }
-        if (realTime > 20.0f) { minDelay = 5.0f; maxDelay = 7.6f; }
-        if (realTime > 30.0f) { level = 2; minDelay = 4.5f; maxDelay = 6.6f; }
-        if (realTime > 40.0f) { minDelay = 4.0f; maxDelay = 5.6f; }
-        if (realTime > 50.0f) { level = 3; minDelay = 3.5f; maxDelay = 4.6f; }
+        if (realTime > 10.0f && realTime <= 20) { minDelay = 5.5f; maxDelay = 6.6f; }
+        if (realTime > 20.0f && realTime <= 30) { minDelay = 5.0f; maxDelay = 6.1f; }
+        if (realTime > 30.0f && realTime <= 40) { level = 2; minDelay = 4.5f; maxDelay = 5.6f; }
+        if (realTime > 40.0f && realTime <= 50) { minDelay = 4.0f; maxDelay = 5.1f; }
+        if (realTime > 50.0f && realTime <= 60) { level = 3; minDelay = 3.5f; maxDelay = 4.6f; }
         if (realTime > 60.0f) { level = 1; realTime = 0.0f; isFirst = false; }
 
         float delay = Random.Range(minDelay, maxDelay);
