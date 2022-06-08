@@ -24,13 +24,19 @@ public class PlayerControl : MonoBehaviour
         {
             Dead();
         }
+
     }
-    private void OnTriggerStay(Collider other)
+    private void OnCollisionStay(Collision collision)
     {
-        if (other.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             isGround = true;
         }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+            isGround = false;
     }
     public void Dead()
     {
@@ -39,7 +45,6 @@ public class PlayerControl : MonoBehaviour
     }
     void Update()
     {
-        isGround = false;
         currentSpeed = levelControl.getPlayerSpeed();
         transform.Translate(new Vector3(currentSpeed * Time.deltaTime, 0.0f, 0.0f));
         

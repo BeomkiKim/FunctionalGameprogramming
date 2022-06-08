@@ -95,7 +95,7 @@ public class PlayerState : MonoBehaviour
                 hollSheildUI.SetActive(true);
                 if (!audioSource.isPlaying)
                     audioSource.PlayOneShot(itemClip);
-                hollsheildTime += 60.0f;
+                hollsheildTime += 5.0f;
                 game.itemScore += 3;
                 game.itemRealCount += 1;
                 break;

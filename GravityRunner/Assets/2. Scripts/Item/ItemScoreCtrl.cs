@@ -23,15 +23,15 @@ public class ItemScoreCtrl : MonoBehaviour
         
         if (gameManager.gameTime < 240)
         {
-            score = 300;
+            score = 500;
         }
         if (gameManager.gameTime >= 240 && gameManager.gameTime < 420)
         {
-            score = 450;
+            score = 750;
         }
         if (gameManager.gameTime >= 420)
         {
-            score = 600;
+            score = 1000;
         }  
     }
     public void getItem(ItemCtrl.ItemKind kind)

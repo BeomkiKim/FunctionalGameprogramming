@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         if (gameTime < 240)
         {
             isGround = groundScore * 200;
-            isItem = itemScore * 300;
+            isItem = itemScore * 500;
             isEnemy = monsterScore * 400;
             totalScore = (timeScore * 100) + isGround + isItem + isEnemy;
             
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
         if (gameTime >= 240 && gameTime < 480)
         {
             isGround = groundScore * 300;
-            isItem = itemScore * 450;
+            isItem = itemScore * 750;
             isEnemy = monsterScore * 600;
             totalScore = (timeScore * 150) + isGround + isItem + isEnemy;
             
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
         if (gameTime >= 420)
         {
             isGround = groundScore * 400;
-            isItem = itemScore * 600;
+            isItem = itemScore * 1000;
             isEnemy = monsterScore * 800;
             totalScore = (timeScore * 200) + isGround + isItem + isEnemy;
             
@@ -164,7 +164,7 @@ public class GameManager : MonoBehaviour
         if (player.isGround)
         {
 
-            groundScore += Time.deltaTime * 3.6f;
+            groundScore += Time.deltaTime;
         }
         switch (stage)
         {
