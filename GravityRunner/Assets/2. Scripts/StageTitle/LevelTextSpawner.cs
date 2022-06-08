@@ -56,7 +56,7 @@ public class LevelTextSpawner : MonoBehaviour
         }
 
 
-        //level2
+        //level2 60√ Ω√¿€
         time = 0;
         yield return new WaitForSeconds(50f);
         level = 2;

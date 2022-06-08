@@ -24,6 +24,20 @@ public class BulletCtrl : MonoBehaviour
 
     private void Update()
     {
+        if (game.gameTime < 240)
+        {
+
+            speed = 30f;
+        }
+        if (game.gameTime >= 240 && game.gameTime < 420)
+        {
+            speed = 40f;
+
+        }
+        if (game.gameTime >= 420)
+        {
+            speed = 50;
+        }
         transform.position += transform.forward * Time.deltaTime * speed;
         if (transform.position.x - playerTransform.position.x > 9)
         {

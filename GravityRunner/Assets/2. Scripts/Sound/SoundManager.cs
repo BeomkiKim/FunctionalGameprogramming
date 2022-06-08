@@ -69,7 +69,7 @@ public class SoundManager : MonoBehaviour
         AudioListener.volume = volumSlider.value;
         save();
     }
-    void load()
+    public void load()
     {
         volumSlider.value = PlayerPrefs.GetFloat("musicVolume");
     }

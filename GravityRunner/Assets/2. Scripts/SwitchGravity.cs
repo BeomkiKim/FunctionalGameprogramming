@@ -20,8 +20,7 @@ public class SwitchGravity : MonoBehaviour
     {
         rigid.AddForce(0.0f, -gravity * Time.deltaTime, 0);
 
-
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             gravity *= -1;
             SwitchGravitySound();

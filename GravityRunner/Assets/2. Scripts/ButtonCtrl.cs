@@ -5,7 +5,9 @@ using UnityEngine;
 public class ButtonCtrl : MonoBehaviour
 {
     public GameObject howToPlay;
+    public GameObject patch;
     public GameObject[] howtoPlayCtrl;
+    public GameObject[] patchNote;
     public GameObject option;
     public GameObject resetOption;
     public bool isOption = false;
@@ -33,9 +35,59 @@ public class ButtonCtrl : MonoBehaviour
         isHowToPlay = true;
 
     }
+    public void clickPatchNote()
+    {
+        patch.SetActive(true);
+    }
+    public void clickPatchX()
+    {
+        patchNote[0].SetActive(true);
+        patchNote[1].SetActive(false);
+        patchNote[2].SetActive(false);
+        patchNote[3].SetActive(false);
+        patch.SetActive(false);
+    }
+    public void patchFirstToSecond()
+    {
+        patchNote[0].SetActive(false);
+        patchNote[1].SetActive(true);
+
+    }
+    public void patchSecondToFirst()
+    {
+        patchNote[0].SetActive(true);
+        patchNote[1].SetActive(false);
+
+    }
+    public void patchSecondToThird()
+    {
+        patchNote[1].SetActive(false);
+        patchNote[2].SetActive(true);
+
+    }
+    public void patchThirdToSecond()
+    {   
+        patchNote[1].SetActive(true);
+        patchNote[2].SetActive(false);
+
+    }
+    public void patchThirdToFourth()
+    {
+        patchNote[2].SetActive(false);
+        patchNote[3].SetActive(true);
+
+    }
+    public void patchFourthToThird()
+    {
+        patchNote[3].SetActive(false);
+        patchNote[2].SetActive(true);
+
+    }
 
     public void clickHtPX()
     {
+        howtoPlayCtrl[0].SetActive(true);
+        howtoPlayCtrl[1].SetActive(false);
         howToPlay.SetActive(false);
         isHowToPlay = false;
     }
@@ -76,19 +128,5 @@ public class ButtonCtrl : MonoBehaviour
 #else
         Application.Quit();
 #endif
-    }
-
-    private void Update()
-    {
-        //if(isHowToPlay && Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    howToPlay.SetActive(false);
-        //    isHowToPlay = false;
-        //}
-        //if(isOption &&  Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    option.SetActive(false);
-        //    isOption = false;
-        //}
     }
 }

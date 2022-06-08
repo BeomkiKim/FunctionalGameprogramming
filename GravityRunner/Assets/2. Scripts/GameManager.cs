@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     PlayerControl player;
     LevelTextSpawner levelTextSpawner;
+    BulletCtrl bullet;
     public float totalScore;
     public float highScore;
     public float timeScore;
@@ -82,7 +83,7 @@ public class GameManager : MonoBehaviour
             totalScore = (timeScore * 100) + isGround + isItem + isEnemy;
             
         }
-        if (gameTime >= 240 && gameTime < 480)
+        if (gameTime >= 240 && gameTime < 420)
         {
             isGround = groundScore * 300;
             isItem = itemScore * 750;
@@ -161,6 +162,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+        bullet = FindObjectOfType<BulletCtrl>();
         if (player.isGround)
         {
 

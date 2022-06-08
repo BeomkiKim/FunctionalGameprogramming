@@ -13,6 +13,7 @@ public class PassLevelDemo : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip pauseCountClip;
 
+    SoundManager sound;
 
 
 
@@ -20,6 +21,7 @@ public class PassLevelDemo : MonoBehaviour
     {
         nextScene = SceneManager.GetActiveScene().buildIndex + 1;
         audioSource = GameObject.Find("Player").GetComponent<AudioSource>();
+        sound = GetComponent<SoundManager>();
     }
     private void Update()
     {
@@ -39,6 +41,7 @@ public class PassLevelDemo : MonoBehaviour
         {
             
             PlayerPrefs.SetInt("levelAt", currentLevel);
+            sound.load();
         }
         //SceneManager.LoadScene("LevelSelect");
     }
